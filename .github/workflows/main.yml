@@ -1,5 +1,10 @@
-on: [push]
-
+on: 
+  workflow_dispatch:
+    inputs:
+      newVersion:
+        description: 'New version to release'     
+        required: false
+        default: 'warning'
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
@@ -9,7 +14,7 @@ jobs:
       id: tag-creator
       uses: merighifacundo/tag-creator@v1.0.0
       with:
-        new-version: '1.2'
+        new-version: ${{ github.event.inputs.newVersion }}"
     # Use the output from the `hello` step
     - name: Get the output time
       run: echo "The time was ${{ steps.hello.outputs.time }}"
