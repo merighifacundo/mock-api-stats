@@ -6,10 +6,11 @@ on:
         required: false
         default: 'warning'
 jobs:
-  hello_world_job:
+  create_tag:
     runs-on: ubuntu-latest
     name: A job to create a tag
     steps:
+    - uses: actions/checkout@v2
     - name: Tag creator
       id: tag-creator
       uses: merighifacundo/tag-creator@v1.0.0
