@@ -1,0 +1,15 @@
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to create a tag
+    steps:
+    - name: Tag creator
+      id: tag-creator
+      uses: merighifacundo/tag-creator@v1.0.0
+      with:
+        new-version: '1.2'
+    # Use the output from the `hello` step
+    - name: Get the output time
+      run: echo "The time was ${{ steps.hello.outputs.time }}"
