@@ -24,6 +24,6 @@ jobs:
         old-version: ${{ steps.node-version-updater.outputs.old-version }}
         token: ${{ secrets.GITHUB_TOKEN }}
         
-    # Use the output from the `hello` step
-    - name: Get the output time
+    # Release Notes
+    - name: Release Notes
       run: echo "The time was ${{ steps.node-release-updater.outputs.release-notes }}"
