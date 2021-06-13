@@ -11,12 +11,11 @@ jobs:
     name: A job to create a tag
     steps:
     - uses: actions/checkout@v2
-    - name: Tag creator
-      id: tag-creator
-      uses: merighifacundo/tag-creator@v1.0.0
+    - name: Node Version Updater
+      id: node-version-updater
+      uses: merighifacundo/node-version-updater@v1.0.0
       with:
         new-version: ${{ github.event.inputs.newVersion }}
-        token: ${{ secrets.GITHUB_TOKEN }}
     # Use the output from the `hello` step
     - name: Get the output time
       run: echo "The time was ${{ steps.hello.outputs.time }}"
