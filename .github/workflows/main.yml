@@ -18,7 +18,7 @@ jobs:
         new-version: ${{ github.event.inputs.newVersion }}
     - name: Node Release Updater
       id: node-release-updater
-      uses: merighifacundo/node-version-creator@v1.2.0
+      uses: merighifacundo/node-version-creator@v1.2.1
       with:
         new-version: ${{ steps.node-version-updater.outputs.new-version }}
         old-version: ${{ steps.node-version-updater.outputs.old-version }}
